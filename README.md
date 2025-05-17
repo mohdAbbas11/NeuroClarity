@@ -14,27 +14,6 @@ To ensure TensorFlow can utilize your GPU, follow these setup instructions:
 4. **cuDNN** (version 8.1)
 5. **Python 3.8-3.10** (TensorFlow 2.12 is not compatible with Python 3.11+)
 
-### Setting Environment Variables
-
-#### Option 1: Windows Batch File (Recommended)
-
-1. Run the provided batch file before starting the application:
-   ```
-   .\run_app.bat
-   ```
-
-This script automatically:
-- Sets up the necessary environment variables
-- Checks for GPU detection
-- Installs required dependencies
-- Runs the Streamlit application
-
-### Verifying GPU Detection
-
-To verify that TensorFlow can detect and use your GPU:
-```
-python verify_gpu.py
-```
 
 ### Troubleshooting GPU Issues
 
@@ -117,37 +96,26 @@ streamlit run app.py
 ```
 
 Or use the all-in-one script:
-```
-.\run_app.bat
-```
+
+python main.py
+
+
 
 For any issues or questions, please contact the project maintainers.
 
 ## Quick Start
 
-To run the complete workflow (download data, train all models, and launch the interface):
-```
-python main.py --kaggle_username YOUR_USERNAME --kaggle_key YOUR_KEY
-```
-
-You can skip specific steps if needed:
-```
-python main.py --skip_download --skip_training  # Only run the interface
-python main.py --skip_training  # Download data and run interface
-python main.py --epochs 10  # Run with fewer training epochs
-```
 
 ## Setup
 
 1. Install dependencies:
-```
 pip install -r requirements.txt
-```
+
 
 2. Download Alzheimer's dataset from Kaggle:
-```
+
 python download_dataset.py
-```
+
 
 This script will:
 - Download a standard Alzheimer's dataset with 4 classes from Kaggle
